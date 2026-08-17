@@ -8,17 +8,17 @@
 
 #include <reg51.h>
 
-sbit led = P1^0;                       /* LED connected to P1.0 */
+sbit led = P1 ^ 0; /* LED connected to P1.0 */
 
 void delayMs(unsigned int delayCount);
 
 void main(void)
 {
-    while (1)                          /* repeat forever */
+    while (1) /* repeat forever */
     {
-        led = 1;                       /* LED ON */
+        led = 1; /* LED ON */
         delayMs(250);
-        led = 0;                       /* LED OFF */
+        led = 0; /* LED OFF */
         delayMs(250);
     }
 }
@@ -34,5 +34,6 @@ void delayMs(unsigned int delayCount)
     unsigned int outerLoop, innerLoop;
 
     for (outerLoop = 0; outerLoop < delayCount; outerLoop++)
-        for (innerLoop = 0; innerLoop < 1275; innerLoop++);
+        for (innerLoop = 0; innerLoop < 1275; innerLoop++)
+            ;
 }
